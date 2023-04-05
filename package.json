@@ -1,0 +1,29 @@
+{
+  "name": "@shrpne/utils",
+  "version": "0.0.1",
+  "description": "",
+  "files": [
+    "/src/",
+    "/dist/"
+  ],
+  "scripts": {
+    "tsc": "tsc --project tsconfig.json",
+    "precommit": "echo 'Pre-commit checks...' && npm run tsc"
+  },
+  "pre-commit": [
+    "precommit"
+  ],
+  "keywords": [
+    "utils"
+  ],
+  "author": "shrpne <shrpne@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/shrpne/utils.git",
+  "bugs": "https://github.com/shrpne/utils/issues",
+  "homepage": "https://github.com/shrpne/utils#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  }
+}
