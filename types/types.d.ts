@@ -22,6 +22,12 @@ declare module "cancelable-signal" {
         onCancel: Promise<any>['catch'];
     };
 }
+declare module "promise-resolve" {
+    /**
+     * @return {[promise: Promise, resolve: function, reject: function]}
+     */
+    export function getPromiseWithResolvers(): [promise: Promise<any>, resolve: Function, reject: Function];
+}
 declare module "wait" {
     /**
      * @template {any} T
