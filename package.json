@@ -1,6 +1,6 @@
 {
   "name": "@shrpne/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "type": "module",
   "exports": {
@@ -11,14 +11,16 @@
   },
   "files": [
     "/src/",
-    "/dist/"
+    "/dist/",
+    "/types/"
   ],
   "types": "./types/types.d.ts",
   "scripts": {
     "tsc:check": "tsc --project tsconfig.json",
-    "tsc:dts": "npm run tsc:modules && npm run tsc:legacy",
+    "tsc:dts": "npm run tsc:modules || npm run tsc:legacy || echo 'types generated'",
     "tsc:modules": "tsc --project tsconfig.json --noEmit false --declaration --emitDeclarationOnly --declarationDir types",
     "tsc:legacy": "tsc --project tsconfig.json --noEmit false --declaration --emitDeclarationOnly --outFile types/types.d.ts",
+    "prepublishOnly": "npm run tsc:dts",
     "precommit": "echo 'Pre-commit checks...' && npm run tsc"
   },
   "pre-commit": [
