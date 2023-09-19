@@ -1,10 +1,10 @@
-declare module "error-cancel" {
+declare module "src/error-cancel" {
     export default class CancelError extends Error {
         constructor(message?: string);
         isCanceled: boolean;
     }
 }
-declare module "cancelable-signal" {
+declare module "src/cancelable-signal" {
     /**
      * @typedef {object} CancelableSignal
      * @property {boolean} isCanceled
@@ -22,13 +22,13 @@ declare module "cancelable-signal" {
         onCancel: Promise<any>['catch'];
     };
 }
-declare module "promise-resolve" {
+declare module "src/promise-resolve" {
     /**
      * @return {[promise: Promise, resolve: function, reject: function]}
      */
     export function getPromiseWithResolvers(): [promise: Promise<any>, resolve: Function, reject: Function];
 }
-declare module "wait" {
+declare module "src/wait" {
     /**
      * @template {any} T
      * @param {number} time
