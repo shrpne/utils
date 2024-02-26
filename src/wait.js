@@ -52,7 +52,7 @@ export async function waitPromiseWithCondition(promiseFn, delay, {limit = 0, imm
 
     async function check() {
         if (limit && counter >= limit) {
-            return false;
+            throw new Error('checks limit reached');
         }
         counter++;
         await wait(delay);
